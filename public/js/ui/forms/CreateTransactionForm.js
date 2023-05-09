@@ -8,7 +8,8 @@ class CreateTransactionForm extends AsyncForm {
    * метод renderAccountsList
    * */
   constructor(element) {
-    super(element)
+    super(element);
+    this.renderAccountsList();
   }
 
   /**
@@ -16,7 +17,31 @@ class CreateTransactionForm extends AsyncForm {
    * Обновляет в форме всплывающего окна выпадающий список
    * */
   renderAccountsList() {
+    const user = User.current();
+    console.log('renderSelect user = ', user);
 
+    if (user) {
+      Account.list(user, (err, response) => {
+        console.log('select_AccountList = ', err, response);
+
+        if (response && response.success) {
+          const incomeAccountsList = document.getElementById('income-accounts-list');
+          const expenseAccountsList = document.getElementById('expense-accounts-list');
+          incomeAccountsList.innerHTML = '';
+          expenseAccountsList.innerHTML = '';
+
+          for (let i = 0; i < response.data.length; i++) {
+            let elem = document.createElement('option');
+            elem.value = response.data[i].id;
+            elem.setAttribute('value', `${response.data[i].id}`);
+            elem.textContent = `${response.data[i].name}`;
+            
+            incomeAccountsList.appendChild(elem.cloneNode(true));
+            expenseAccountsList.appendChild(elem);
+          }
+        }
+      });
+    }
   }
 
   /**
@@ -26,6 +51,16 @@ class CreateTransactionForm extends AsyncForm {
    * в котором находится форма
    * */
   onSubmit(data) {
-
+    Transaction.create(data, (err, response) => {
+      console.log('Form Transaction_create = ', err, response);
+      
+      if (response && response.success) {
+        this.element.reset();     // в this.element находится открытая форма
+        const modalId = this.element.closest('.modal').dataset.modalId;
+        const transactionModal = App.getModal(modalId);
+        transactionModal.close();
+        App.update();
+      }
+    });
   }
 }

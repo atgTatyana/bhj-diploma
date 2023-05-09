@@ -1,0 +1,290 @@
+{
+  "users": [
+    {
+      "name": "demo",
+      "email": "demo@demo",
+      "password": "demo",
+      "id": "1"
+    },
+    {
+      "name": "Татьяна",
+      "email": "demo1@demo1",
+      "password": "demo1",
+      "id": "a07e2fglhg3s2ae"
+    },
+    {
+      "name": "Alex",
+      "email": "demo2@demo2",
+      "password": "demo2",
+      "id": "a07e2w4lhglg55z"
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Банк",
+      "user_id": "1",
+      "id": "1"
+    },
+    {
+      "name": "Магазин",
+      "user_id": "1",
+      "id": "2"
+    },
+    {
+      "name": "Бизнес",
+      "user_id": "1",
+      "id": "3"
+    },
+    {
+      "name": "bank",
+      "user_id": "a07e2fglhg3s2ae",
+      "id": "a07e50glhg3u3r7"
+    },
+    {
+      "name": "shop",
+      "user_id": "a07e2fglhg3s2ae",
+      "id": "a07e1n4lhgledaf"
+    },
+    {
+      "name": "car",
+      "user_id": "a07e2w4lhglg55z",
+      "id": "a07e51wlhglgtpn"
+    }
+  ],
+  "transactions": [
+    {
+      "account_id": "1",
+      "created_at": "2019-09-15 10:24:02",
+      "id": "1",
+      "name": "Кредит",
+      "sum": 5000,
+      "type": "expense",
+      "user_id": "1"
+    },
+    {
+      "account_id": "1",
+      "created_at": "2019-09-17 15:53:02",
+      "id": "2",
+      "name": "Баланс на дебетовке",
+      "sum": 3200,
+      "type": "income",
+      "user_id": "1"
+    },
+    {
+      "account_id": "1",
+      "created_at": "2019-09-19 20:12:02",
+      "id": "3",
+      "name": "Копилка",
+      "sum": 1500,
+      "type": "income",
+      "user_id": "1"
+    },
+    {
+      "account_id": "2",
+      "created_at": "2019-09-26 16:23:02",
+      "id": "4",
+      "name": "Молочные продукты",
+      "sum": 100,
+      "type": "income",
+      "user_id": "1"
+    },
+    {
+      "account_id": "2",
+      "created_at": "2019-09-25 15:03:02",
+      "id": "5",
+      "name": "Фрукты",
+      "sum": 250,
+      "type": "income",
+      "user_id": "1"
+    },
+    {
+      "account_id": "2",
+      "created_at": "2019-09-25 15:03:02",
+      "id": "17",
+      "name": "Овощи",
+      "sum": 300,
+      "type": "income",
+      "user_id": "1"
+    },
+    {
+      "account_id": "2",
+      "created_at": "2019-09-26 14:47:02",
+      "id": "6",
+      "name": "Мясо",
+      "sum": 600,
+      "type": "income",
+      "user_id": "1"
+    },
+    {
+      "account_id": "2",
+      "created_at": "2019-09-27 13:27:02",
+      "id": "7",
+      "name": "Долг в банк",
+      "sum": 5000,
+      "type": "expense",
+      "user_id": "1"
+    },
+    {
+      "account_id": "3",
+      "created_at": "2017-10-15 13:27:02",
+      "id": "9",
+      "name": "На банду",
+      "sum": 15000,
+      "type": "expense",
+      "user_id": "1"
+    },
+    {
+      "account_id": "3",
+      "created_at": "2017-09-17 13:27:02",
+      "id": "10",
+      "name": "На стволы",
+      "sum": 6000,
+      "type": "expense",
+      "user_id": "1"
+    },
+    {
+      "account_id": "3",
+      "created_at": "2017-12-27 13:27:02",
+      "id": "11",
+      "name": "Прибыль с банка",
+      "sum": 1500000,
+      "type": "income",
+      "user_id": "1"
+    },
+    {
+      "account_id": "3",
+      "created_at": "2018-01-15 13:27:02",
+      "id": "12",
+      "name": "Прибыль с магазина",
+      "sum": 300000,
+      "type": "income",
+      "user_id": "1"
+    },
+    {
+      "account_id": "3",
+      "created_at": "2018-01-15 13:27:02",
+      "id": "13",
+      "name": "Подарок сизого",
+      "sum": 20000,
+      "type": "income",
+      "user_id": "1"
+    },
+    {
+      "account_id": "3",
+      "created_at": "2017-09-15 13:27:02",
+      "id": "14",
+      "name": "На охрану",
+      "sum": 60000,
+      "type": "expense",
+      "user_id": "1"
+    },
+    {
+      "account_id": "3",
+      "created_at": "2017-10-15 13:27:02",
+      "id": "15",
+      "name": "На бумер",
+      "sum": 300000,
+      "type": "expense",
+      "user_id": "1"
+    },
+    {
+      "id": "a07e9cwlhdiikr8",
+      "type": "income",
+      "name": "shop",
+      "sum": 37,
+      "account_id": "3",
+      "user_id": "1",
+      "created_at": "2023-05-07T14:31:45.811Z"
+    },
+    {
+      "id": "a07e5fslhdj3hty",
+      "type": "income",
+      "name": "e",
+      "sum": 3,
+      "account_id": "1",
+      "user_id": "1",
+      "created_at": "2023-05-07T14:48:01.798Z"
+    },
+    {
+      "id": "a07e6xklhdj8zf4",
+      "type": "expense",
+      "name": "uu",
+      "sum": 66,
+      "account_id": "2",
+      "user_id": "1",
+      "created_at": "2023-05-07T14:52:17.871Z"
+    },
+    {
+      "id": "a07eb7wlhg3upf1",
+      "type": "expense",
+      "name": "job",
+      "sum": 5000,
+      "account_id": "a07e50glhg3u3r7",
+      "user_id": "a07e2fglhg3s2ae",
+      "created_at": "2023-05-09T10:04:36.012Z"
+    },
+    {
+      "id": "a07e21wlhg3vkae",
+      "type": "expense",
+      "name": "cat",
+      "sum": 200,
+      "account_id": "a07e50glhg3u3r7",
+      "user_id": "a07e2fglhg3s2ae",
+      "created_at": "2023-05-09T10:05:16.021Z"
+    },
+    {
+      "id": "a07e5sglhg4294y",
+      "type": "income",
+      "name": "hat",
+      "sum": 300,
+      "account_id": "a07e50glhg3u3r7",
+      "user_id": "a07e2fglhg3s2ae",
+      "created_at": "2023-05-09T10:10:28.161Z"
+    },
+    {
+      "id": "a07e3eslhg6spax",
+      "type": "expense",
+      "name": "tttt",
+      "sum": 66,
+      "account_id": "a07e50glhg3u3r7",
+      "user_id": "a07e2fglhg3s2ae",
+      "created_at": "2023-05-09T11:27:01.400Z"
+    },
+    {
+      "id": "a07eoclhglc8bi",
+      "type": "income",
+      "name": "present",
+      "sum": 10000,
+      "account_id": "a07e50glhg3u3r7",
+      "user_id": "a07e2fglhg3s2ae",
+      "created_at": "2023-05-09T18:14:07.133Z"
+    },
+    {
+      "id": "a07e4u0lhglerws",
+      "type": "income",
+      "name": "present",
+      "sum": 5000,
+      "account_id": "a07e1n4lhgledaf",
+      "user_id": "a07e2fglhg3s2ae",
+      "created_at": "2023-05-09T18:16:05.835Z"
+    },
+    {
+      "id": "a07e7x0lhgljybz",
+      "type": "expense",
+      "name": "repair",
+      "sum": 4000,
+      "account_id": "a07e51wlhglgtpn",
+      "user_id": "a07e2w4lhglg55z",
+      "created_at": "2023-05-09T18:20:07.438Z"
+    },
+    {
+      "id": "a07e6yglhgllddp",
+      "type": "income",
+      "name": "job",
+      "sum": 15500,
+      "account_id": "a07e51wlhglgtpn",
+      "user_id": "a07e2w4lhglg55z",
+      "created_at": "2023-05-09T18:21:13.596Z"
+    }
+  ]
+}

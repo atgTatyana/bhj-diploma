@@ -6,13 +6,16 @@
 
 class UserWidget {
   /**
-   * Устанавливает полученный элемент
+   * Устанавливает полученный элемент <div class="user-panel">
    * в свойство element.
    * Если переданный элемент не существует,
    * необходимо выкинуть ошибку.
    * */
   constructor(element){
-
+    if (!element) {
+      throw new Error('В конструктор UserWidget передан пустой/несущ. элемент');
+    }
+    this.element = element;
   }
 
   /**
@@ -23,6 +26,10 @@ class UserWidget {
    * авторизованного пользователя
    * */
   update(){
-
+    const user = User.current();
+    if (user) {
+      const userName = this.element.querySelector('.user-name');
+      userName.textContent = user.name;
+    }
   }
 }

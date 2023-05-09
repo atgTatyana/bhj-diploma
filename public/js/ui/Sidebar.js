@@ -18,7 +18,13 @@ class Sidebar {
    * при нажатии на кнопку .sidebar-toggle
    * */
   static initToggleButton() {
-
+    const sidebarToggle = document.querySelector('.sidebar-toggle');
+    const sidebarMini = document.querySelector('.sidebar-mini');
+    
+    sidebarToggle.addEventListener('click', () => {
+      sidebarMini.classList.toggle('sidebar-open');
+      sidebarMini.classList.toggle('sidebar-collapse');
+    })
   }
 
   /**
@@ -29,6 +35,30 @@ class Sidebar {
    * выходу устанавливает App.setState( 'init' )
    * */
   static initAuthLinks() {
+    const loginButton = document.querySelector('.menu-item_login');
+    const registerButton = document.querySelector('.menu-item_register');
+    const logoutButton = document.querySelector('.menu-item_logout');
 
+    loginButton.addEventListener('click', () => {
+      // возвращает созданный в App.initModal() sэкземпляр класса Modal (всплывающего окна):
+      const loginModal = App.getModal('login');
+      console.log('open_loginModal = ', loginModal);     // {element: div#modal-login.modal.fade.in}
+      loginModal.open();
+    })
+
+    registerButton.addEventListener('click', () => {
+      const registerModal = App.getModal('register');
+      console.log('open_registerModal = ', registerModal);     // {element: div#modal-register.modal.fade.in}
+      registerModal.open();
+    })
+
+    logoutButton.addEventListener('click', () => {
+      User.logout((err, response) => {
+        console.log('Sidebar_logout = ', err, response);
+        if (response && response.success) {
+          App.setState('init');
+        }
+      });
+    })
   }
 }
