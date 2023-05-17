@@ -27,7 +27,7 @@ class Modal {
   registerEvents() {
     const closeButtons = this.element.querySelectorAll('button[data-dismiss="modal"]');
     
-    closeButtons.forEach(el => el.addEventListener('click', (e) => this.onClose()));
+    closeButtons.forEach(el => el.addEventListener('click', this.onClose.bind(this)));
   }
 
   /**
@@ -36,9 +36,10 @@ class Modal {
    * */
   onClose(e) {
     // некоторые элементы, закрывающие окно могут быть ссылками
-    console.log(e)    // undefined
-    // e.preventDefault();
+    console.log(e)  // PointerEvent {isTrusted: true, pointerId: 1, width: 1, height: 1, pressure: 0, …}
+    console.log(this)  // Modal {element: div#modal-new-account.modal.fade.in}
 
+    e.preventDefault();
     this.close();
   }
   /**

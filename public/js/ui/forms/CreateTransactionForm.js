@@ -30,15 +30,12 @@ class CreateTransactionForm extends AsyncForm {
           incomeAccountsList.innerHTML = '';
           expenseAccountsList.innerHTML = '';
 
-          for (let i = 0; i < response.data.length; i++) {
-            let elem = document.createElement('option');
-            elem.value = response.data[i].id;
-            elem.setAttribute('value', `${response.data[i].id}`);
-            elem.textContent = `${response.data[i].name}`;
-            
-            incomeAccountsList.appendChild(elem.cloneNode(true));
-            expenseAccountsList.appendChild(elem);
-          }
+          const options = response.data.map(el => el.name);
+          const value = response.data.map(el => el.id);
+          options.forEach((element, index) => {
+            incomeAccountsList[index] = new Option(element, value[index]);
+            expenseAccountsList[index] = new Option(element, value[index]);
+          })
         }
       });
     }

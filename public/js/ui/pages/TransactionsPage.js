@@ -15,6 +15,7 @@ class TransactionsPage {
       throw new Error('В конструктор TransactionsPage передан пустой/несущ. элемент');
     }
     this.element = element;
+    this.lastOptions = null;
     this.registerEvents();
   }
 
@@ -22,8 +23,8 @@ class TransactionsPage {
    * Вызывает метод render для отрисовки страницы
    * */
   update() {
-    if (this.lastOptions && this.lastOptions.account_id) {
-      this.render({ account_id: this.lastOptions.account_id });
+    if (this.lastOptions) {
+      this.render(this.lastOptions);
     }
   }
 
@@ -90,7 +91,7 @@ class TransactionsPage {
     let isRemove = confirm('Вы действительно хотите удалить эту транзакцию?');
     if (isRemove) {
       let transactionId = {
-        account_id: this.lastOptions.account_id,
+        ...this.lastOptions,
         id,
       }
       Transaction.remove(transactionId, (err, response) => {
@@ -133,7 +134,7 @@ class TransactionsPage {
   clear() {
     this.renderTransactions([]);
     this.renderTitle('Название счёта');
-    this.lastOptions = '';
+    this.lastOptions = null;
   }
 
   /**
